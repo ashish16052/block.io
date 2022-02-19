@@ -2,9 +2,6 @@ const ball = document.querySelector(".ball")
 const obstacle = document.querySelector(".obstacle")
 const gameOver = document.querySelector(".gameover")
 
-function randomTime(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) ) + min;
-}
 
 document.addEventListener('keyup', event => {
   if (event.code === 'Space') {
@@ -66,34 +63,13 @@ function isTouching() {
   var obstacleR = obstacle.offsetLeft + obstacle.offsetWidth;
   var obstacleB = obstacle.offsetTop + obstacle.offsetWidth;
 
-  console.log(randomTime());
 
-  if (ballR >= obstacleL && ballB >= obstacleT) {
+  if ((ballR >= obstacleL && ballL <= obstacleR) && ballB >= obstacleT) {
     gameOver.style.display = "block";
     document.querySelector('.pause').click();
   }
 }
 
-
-
-var ballL = ball.offsetLeft;
-var ballT = ball.offsetTop;
-var ballR = ball.offsetLeft + ball.offsetWidth;
-var ballB = ball.offsetTop + ball.offsetWidth;
-
-var obstacleL = obstacle.offsetLeft;
-var obstacleT = obstacle.offsetTop;
-var obstacleR = obstacle.offsetLeft + obstacle.offsetWidth;
-var obstacleB = obstacle.offsetTop + obstacle.offsetWidth;
-
-console.log(ballT);
-console.log(obstacleT);
-console.log(ballB);
-console.log(obstacleB);
-
-
 window.setInterval(function () {
   isTouching();
 }, 10);
-
-
