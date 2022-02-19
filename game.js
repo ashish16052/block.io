@@ -15,6 +15,16 @@ document.addEventListener('keyup', event => {
   }
 })
 
+ball.addEventListener('click', function() {
+  anime({
+    targets: '.ball',
+    bottom: 280,
+    duration: 400,
+    direction: 'alternate',
+    easing: 'easeOutSine'
+  });
+})
+
 let animation = anime({
   targets: '.obstacle',
   autoplay: false,
