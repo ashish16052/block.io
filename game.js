@@ -3,18 +3,6 @@ const obstacle = document.querySelector(".obstacle")
 const gameOver = document.querySelector(".gameover")
 
 
-document.addEventListener('keyup', event => {
-  if (event.code === 'Space') {
-    anime({
-      targets: '.ball',
-      bottom: 280,
-      duration: 400,
-      direction: 'alternate',
-      easing: 'easeOutSine'
-    });
-  }
-})
-
 ball.addEventListener('click', function() {
   anime({
     targets: '.ball',
