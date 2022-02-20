@@ -3,12 +3,18 @@ const obstacle = document.querySelector(".obstacle")
 const gameOver = document.querySelector(".gameover")
 
 
-ball.addEventListener('click', function() {
+ball.addEventListener('click', function () {
   anime({
     targets: '.ball',
     bottom: 280,
     duration: 400,
     direction: 'alternate',
+    easing: 'easeOutSine'
+  });
+  anime({
+    targets: '.ball',
+    rotateZ: [0, 180],
+    duration: 400,
     easing: 'easeOutSine'
   });
 })
